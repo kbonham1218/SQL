@@ -1,0 +1,28 @@
+--Create a store databas=-
+
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, size TEXT, price INTEGER);
+
+
+INSERT INTO inventory VALUES(1, "shirt", 4, "black", "small", 10);
+INSERT INTO inventory VALUES(2, "shirt", 4, "white", "medium", 10);
+INSERT INTO inventory VALUES(3, "shirt", 7, "green", "small", 10);
+INSERT INTO inventory VALUES(4, "shirt", 3, "black", "large", 10);
+INSERT INTO inventory VALUES(5, "shirt", 2, "red", "extra large", 10);
+INSERT INTO inventory VALUES(6, "pants", 5, "jeans", "large", 25);
+INSERT INTO inventory VALUES(7, "pants", 3, "khaki", "medium", 20);
+INSERT INTO inventory VALUES(8, "pants", 6, "black", "small", 15);
+INSERT INTO inventory VALUES(9, "pants", 2, "jeans", "medium", 25);
+INSERT INTO inventory VALUES(10, "pants", 3, "khaki", "small", 20);
+INSERT INTO inventory VALUES(11, "shorts", 4, "jeans", "medium", 20);
+INSERT INTO inventory VALUES(12, "shorts", 2, "khaki", "small", 15);
+INSERT INTO inventory VALUES(13, "shorts", 3, "jeans", "small", 20);
+INSERT INTO inventory VALUES(14, "shorts", 1, "khaki", "medium", 15);
+INSERT INTO inventory VALUES(15, "hoodie", 10, "gray", "large", 45);
+
+--display the data sorted by price.
+SELECT * FROM inventory 
+ORDER BY price;
+
+--display the amount of each size item.
+SELECT size, SUM(quantity) FROM inventory 
+GROUP BY size
